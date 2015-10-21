@@ -5,6 +5,7 @@
 
 body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+  overflow-y: scroll;
 }
 
 header.widget-desc {
@@ -17,6 +18,19 @@ header.widget-desc {
   -moz-box-shadow: -1px 4px 20px -5px rgba(0,0,0,0.75);
   box-shadow: -1px 4px 20px -5px rgba(0,0,0,0.75);
   color: white;
+  transition: all 0.1s ease-in;
+}
+header.widget-desc.scrolled {
+  position: fixed;
+  width: 100%;
+  height: 25px;
+  padding-top: 5px;
+}
+header.widget-desc.scrolled h1{
+  display:none;
+}
+header.widget-desc.scrolled span{
+  display:none;
 }
 header h1 {
     color: rgba(255,255,255,.54); 
@@ -117,12 +131,40 @@ header.widget-desc span {
     opacity:0;
     transition: all .5s ease-out;
 }
+#results.show{
+    opacity:1;
+}
+#results .product{
+    display:none;
+}
+#results.show .product{
+    display:block;
+}
 
 .recommendation{
     margin: 50px 5px 5px 5px;
 }
+.recommendation .tile{
+    float:left;
+    width: 125px;
+    margin: 0 5px 5px 0;
+}
 .recommendation .info{
-    float:right;
+    /*float:right;*/
+    float:left;
+    width: 125px;
+    padding: 0 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16),0 0 2px 0 rgba(0,0,0,.12);
+}
+.recommendation .info div{
+  font-size: 18px;
+}
+.recommendation .info div.price{
+  font-size: 14px;
+}
+.recommendation .tile-img{
+    height: 75px;overflow: hidden;
 }
 .recommendation img{
     float:left;
@@ -149,19 +191,11 @@ header.widget-desc span {
 /* Floating Contact ---------------------- */
 .amg-blue .amg-floating-icon, 
 .amg-blue .amg-floating-link {
-	background: #2c3e50;
-}
-.amg-orange .amg-floating-icon, 
-.amg-orange .amg-floating-link {
-	background: #ff8d00;
-}
-.amg-green .amg-floating-icon, 
-.amg-green .amg-floating-link {
-	background: #39d084;
+	background: #4C8ED0;
 }
 .amg-floating-wrap {
 	position: fixed;
-	right: -260px;
+	right: -270px;
 	font-size: 20px;
 	opacity: 0.6;
 	z-index: 999;
@@ -188,7 +222,7 @@ header.widget-desc span {
 	vertical-align: middle;
 }
 .amg-floating-link {
-	width: 260px;
+	width: 270px;
   min-height: 48px;
 	padding: 10px 0;
 	overflow: hidden;
@@ -212,3 +246,14 @@ header.widget-desc span {
 .amg-floating-wrap:hover .amg-floating-link {
 	right: 0;
 }
+
+/*Debug*/
+/*
+.amg-floating-wrap {
+  opacity: 1;
+  right: 0;
+}
+.amg-floating-wrap .amg-floating-link {
+  right: 0;
+}
+*/
