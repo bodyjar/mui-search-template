@@ -19,6 +19,7 @@ header.widget-desc {
   box-shadow: -1px 4px 20px -5px rgba(0,0,0,0.75);
   color: white;
   width: 100%;
+  z-index:100;
   transition: all 0.1s ease-in;
 }
 header.widget-desc img{
@@ -128,8 +129,29 @@ header.widget-desc span {
 }
 
 .product .info{
+    position: relative;
     float: right; 
     width: 632px;
+}
+.product .info p{
+    overflow: hidden;
+    height: 82px;
+}
+.gradient-overlay{
+    display: block;
+    overflow: hidden;
+    height: 75px;
+    background: -moz-linear-gradient(top,rgba(255,255,255,0) 0%,white 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,0)),color-stop(100%,white));
+    background: -webkit-linear-gradient(top,rgba(255,255,255,0) 0%,white 100%);
+    background: -o-linear-gradient(top,rgba(255,255,255,0) 0%,white 100%);
+    background: -ms-linear-gradient(top,rgba(255,255,255,0) 0%,white 100%);
+    background: linear-gradient(to bottom,rgba(255,255,255,0) 0%,white 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff',endColorstr='#ffffff',GradientType=0 );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .product img{
